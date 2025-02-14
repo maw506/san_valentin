@@ -1,0 +1,95 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín ❤️</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffccdc;
+            margin: 0;
+            padding: 20px;
+        }
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            margin: 50px auto;
+            animation: heartbeat 1s infinite;
+        }
+        .heart::before, .heart::after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1) rotate(-45deg); }
+            50% { transform: scale(1.2) rotate(-45deg); }
+        }
+        #meme-container {
+            margin-top: 20px;
+        }
+        img {
+            width: 250px;
+            border-radius: 10px;
+        }
+        #carta {
+            margin-top: 20px;
+            padding: 10px;
+            width: 80%;
+            height: 100px;
+        }
+    </style>  
+</head>
+
+  
+<body>
+    <h1>💖 Feliz San Valentín 💖</h1>
+    <br>
+    <div class="heart"></div>
+    <div id="meme-container">
+      <h3>TE AMO<h3/>
+      <img id="meme"                                  src="https://i.postimg.cc/W1ZT5qyq/OIP.jpg">
+      
+        <br>
+           <button 
+                   class="btn-red" onclick="cambiarMeme()">SOMOS</button>
+        <br>
+        <br>
+      escribi aca tu dedicatoria 
+    </div>
+    <script>
+        const memes = [
+       "https://i.postimg.cc/wMSSY2Ym/f25ae5445a02133d5407392a08c70644.jpg",
+            "https://i.postimg.cc/P5nB6S4G/c1bbcd6b5260fb847cf354335cb5d922.jpg",
+            "https://i.postimg.cc/vmQCyDk3/1673185352-3-63.jpg",
+          
+          "https://i.postimg.cc/bY7yhHTg/sticker-7.webp",
+          "https://i.postimg.cc/xjzQtN2z/80088.webp"
+        ];
+        let indice = 0;
+
+        function cambiarMeme() {
+            indice = (indice + 1) % memes.length;
+            document.getElementById("meme").src = memes[indice];
+        }
+        
+    </script>
+        
+</body>
+</html>
